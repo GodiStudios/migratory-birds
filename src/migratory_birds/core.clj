@@ -4,7 +4,7 @@
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (println "Hello, World!"))
+  (migratory-birds (randon-vector-generator)))
 
 (defn randon-vector-generator []
   (let [rand-vec (atom [])]

@@ -2,6 +2,9 @@
   (:require [clojure.test :refer :all]
             [migratory-birds.core :refer :all]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+(deftest generate-rand-values
+  (testing "Testing generated array"
+    (is (< (count (randon-vector-generator)) 200000))
+    (is (every? (partial >= 5) (randon-vector-generator)))
+    (is (every? (partial <= 1) (randon-vector-generator)))))
+

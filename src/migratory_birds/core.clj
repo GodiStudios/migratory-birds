@@ -11,3 +11,11 @@
     (dotimes [x (rand-int 200000)] 
       (swap! rand-vec conj (+ 1 (rand-int 5))))
     @rand-vec))
+
+(defn migratory-birds [vec]
+  (->> vec
+    (sort)
+    (frequencies)
+    (sort-by val >)
+    (first)
+    (first)))
